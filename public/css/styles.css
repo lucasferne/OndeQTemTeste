@@ -1,0 +1,73 @@
+body{
+  background-color: #A1B3A5;
+}
+
+h1{
+    color: rgb(34, 194, 34);
+   font-family: 'Bebas Neue', cursive;
+}
+
+.titCenter{
+  text-align: center;
+  padding-top: 5%;
+}
+
+.titLado{
+  text-align: right;
+  padding-top: 5%;
+}
+
+.row h1, p{
+  text-align: center;
+}
+
+.row img{
+  width: 200px;
+  padding-bottom: 5%;
+}
+
+.parCenter{
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 5%;
+}
+
+.container{
+  padding-top: 2.5%;
+}
+
+.navbar img{
+    width: 28px;
+}
+
+a:link {
+    color:#7fb241;
+    text-decoration:none;
+  }
+  a:visited {
+    color:#7fb241;
+    text-decoration:none;
+  }
+  a:hover {
+    color:#23861a;
+    text-decoration:none;
+  }
+  a:active {
+    color:#23861a;
+    text-decoration:none;
+  }
+
+/* produtos */
+
+.card img{
+  max-height: 500px;
+  border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card-title{
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(34, 194, 34);
+  font-size: 30px;
+}
