@@ -3,7 +3,7 @@ body{
 }
 
 h1{
-    color: rgb(34, 194, 34);
+   color: rgb(34, 194, 34);
    font-family: 'Bebas Neue', cursive;
 }
 
@@ -58,16 +58,17 @@ a:link {
     text-decoration:none;
   }
 
-/* produtos */
-
-.card img{
-  max-height: 500px;
-  border-top-left-radius: 10px;
-  border-top-left-radius: 10px;
+/* pagina de controle */
+#product-create-container{
+  padding: 30px;
 }
 
-.card-title{
-  font-family: 'Bebas Neue', cursive;
-  color: rgb(34, 194, 34);
-  font-size: 30px;
+#product-create-container label{
+  font-weight: bold;
+}
+
+#product-create-container input,
+#product-create-container select,
+#product-create-container textarea{
+  font-size: 12px;
 }

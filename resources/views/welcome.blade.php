@@ -8,12 +8,6 @@
 
     <!-- Carrossel de imagens -->
     <div class="container">
-        <div style="padding-bottom: 3%">
-            <h1 style="text-align: center">Busque um produto</h1>
-            <form action="">
-                <input type="text" id="search" name="search" class="form-control" placeholder="Procurar">
-            </form>
-        </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -55,7 +49,7 @@
             <div class="row">
                 <div class="col-md-4 col-xs-12">
                     <div style="width: 200px; padding-left: 35%; padding-right: 50%; padding-bottom: 5% img-fluid">
-                        <img src="./img/laravel.png" />
+                        <img src="./img/laravel.png"/>
                     </div>
                 </div>
                 <div class="col-md-8 col-xs-12 right-content">
