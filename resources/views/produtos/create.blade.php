@@ -9,8 +9,13 @@
         <h1 style="text-align: center; padding-top: 5px; padding-bottom: 5px">Crie o seu produto</h1>
         
         <!--formulário-->
-        <form action="/products" method="POST">
+        <form action="/products" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="form-group" style="padding-bottom: 7px">
+                <label for="image">Imagem do produto:</label>
+                <input type="file" id="image" name="image" class="form-control-file">
+            </div>
+            
             <div class="form-group">
                 <label for="title">Produto:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome do produto">

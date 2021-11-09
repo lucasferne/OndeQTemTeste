@@ -12,10 +12,6 @@ class EventController extends Controller
         return view('welcome', ['events' => $events]);
     }
 
-    public function contato(){
-        return view('contato');
-    }
-
     public function create(){
         return view('produtos.create');
     }
@@ -33,9 +29,23 @@ class EventController extends Controller
         $product->local = $request->local;
         $product->preco = $request->preco;
 
+         //image upload
+         if($request->hasFile('image') ** $request->file('image')-> isValid()){
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/produtos'), $imageName);
+
+            $product->image = $imageName;
+         }
+
         $product->save();
 
-        return redirect ('/');
+        return redirect ('/')->with('msg','Produto lançado com sucesso!');
+
     }
 }
 
