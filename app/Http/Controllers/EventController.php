@@ -17,8 +17,18 @@ class EventController extends Controller
     }
 
     public function produtos(){
-        $events = Event::all();
-        return view('produtos', ['events' => $events]);
+        $search = request('search');
+
+        if($search){
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+        }
+        else{
+            $events = Event::all();
+        }
+        return view('produtos', ['events'=>$events, 'search'=>$search]);
+
     }
 
     public function store(Request $request){
@@ -44,7 +54,7 @@ class EventController extends Controller
 
         $product->save();
 
-        return redirect ('/')->with('msg','Produto lançado com sucesso!');
+        return redirect ('/produtos')->with('msg','Produto lançado com sucesso!');
 
     }
 }
