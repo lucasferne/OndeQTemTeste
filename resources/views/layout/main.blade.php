@@ -53,6 +53,9 @@
                             <a class="nav-link" href="/produtos">Produtos</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Meus produtos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Lucas
                                 Aplication</a>
                         </li>

@@ -51,48 +51,48 @@
         </nav>
         <!-- header-top-light.// -->
         <!--Navbar Com Usuario-->
+        <section class="header-main border-bottom bg-white">
+            <div class="container-fluid">
+                <h1 style="text-align: center;">Meus produtos</h1>
+                <a href="produtos/create">
+                    <div class="text-center" style="padding-bottom: 5px">
+                        <button type="button" class="btn btn-light btn-floating mx-2"
+                            style="text-alling: center;background-color: #f0974c; color: #fff;">Crie</button>
+                    </div>
+                </a>
+            </div>
     </header>
     <!--Navbar col-lg-3 col-md-6 mb-4 mb-lg-0 para responsividade do container de colunas-->
 
-    <div id="product-create-container" class="col-md-6 offset-md-3">
-        <!--titulo do formulário-->
-        <h1 style="text-align: center; padding-top: 5px; padding-bottom: 5px">Crie o seu produto</h1>
+    <div class="col-md-10 offset-md-1 dashboard-title-container">
+        <div class="row" style="margin:0; align-items: start">
+            @foreach ($events as $event)
+                <div class="card" style="align-content: start;">
+                    <div class="box card-body" style="align-items: start">
+                        <h5 class="card-text" style="text-align: start">{{ $event->title }}</h5>
+                        <p class="card-text" style="text-align: start">{{ $event->desc }}</p>
+                        <h6 class="card-text" style="text-align: start">{{ $event->local }}</h6>
+                        <p class="card-text text-muted" style="text-align: start">R${{ $event->preco }}</p>
 
-        <!--formulário-->
-        <form action="/products" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group" style="padding-bottom: 7px">
-                <label for="image">Imagem do produto:</label>
-                <input type="file" id="image" name="image" class="form-control-file">
-            </div>
-
-            <div class="form-group">
-                <label for="title">Produto:</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do produto">
-            </div>
-
-            <div class="form-group">
-                <label for="desc">Descrição:</label>
-                <textarea class="form-control" name="desc" id="desc" placeholder="Descrição do produto"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="local">Loja:</label>
-                <input type="text" class="form-control" id="local" name="local" placeholder="Nome da loja">
-            </div>
-
-            <div class="form-group" style="width: 25%">
-                <label for="preco">Preço:</label>
-                <input type="double" class="form-control" id="preco" name="preco" placeholder="Preço do produto">
-            </div>
-
-            <!--Botão do formulário-->
-            <div style="text-align: center; padding-top: 5px">
-                <input type="submit" class="btn btn-floating mx-2" value="Criar produto"
-                    style="background-color: #f0974c; color: #fff;">
-            </div>
-        </form>
+                        <form action="/produtos/{{ $event->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"
+                                style="text-alling: center; color: #fff;">Deletar {{ $event->title }}</button>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/listaproduto.js"></script>
+
+
     <footer class="text-center text-lg-start text-white mt-5" style="background-color: #FFB04F;">
         <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
             © 2021 Copyright: OndeQTem, by Equipe 3

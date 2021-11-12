@@ -17,6 +17,12 @@ Route::get('/', [EventController::class, 'index']);
 
 Route::get('/produtos', [EventController::class, 'produtos']);
 
+Route::get('/produto', [EventController::class, 'produto']);
+
 Route::post('/products', [EventController::class, 'store']);
 
 Route::get('produtos/create', [EventController::class, 'create']);
+
+Route::get('/dashboard', [EventController::class, 'dashboard']);
+
+Route::delete('produtos/{id}', [EventController::class, 'destroy']);
